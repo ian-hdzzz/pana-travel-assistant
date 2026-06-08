@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pana — Experiencias en Venezuela</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a1628;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a2a4a 0%, #0d1b2a 100%);
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1e3a5f;
+        }
+        .header h1 { color: #f7d047; font-size: 28px; margin-bottom: 4px; }
+        .header p { color: #7eb8da; font-size: 14px; }
+        .grid {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background: #1a2a4a;
+            border: 1px solid #2a4a6a;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); border-color: #f7d047; }
+        .card-header {
+            background: linear-gradient(135deg, #0d2b45 0%, #1a3a5a 100%);
+            padding: 20px;
+        }
+        .card-header h2 { font-size: 18px; color: #ffffff; margin-bottom: 4px; }
+        .card-header .location { color: #f7d047; font-size: 13px; font-weight: 500; }
+        .card-body { padding: 16px 20px; }
+        .card-body p { font-size: 14px; line-height: 1.6; color: #b0c4de; margin-bottom: 12px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 500;
+        }
+        .tag.duration { background: #1a4a2a; color: #4ade80; }
+        .tag.difficulty { background: #3a3a1a; color: #f7d047; }
+        .tag.price { background: #2a1a3a; color: #c084fc; }
+        .card-footer {
+            padding: 12px 20px;
+            border-top: 1px solid #2a4a6a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-footer a {
+            color: #f7d047;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .card-footer a:hover { text-decoration: underline; }
+        .card-footer .contact { color: #7eb8da; font-size: 12px; }
+        .back-link {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            color: #7eb8da;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .back-link:hover { color: #f7d047; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Experiencias Venezuela</h1>
+        <p>Curated by Pana — your Venezuelan travel friend</p>
+    </div>
+
+    <div class="grid">
+        {% for dest in destinations %}
+        <div class="card">
+            <div class="card-header">
+                <h2>{{ dest.name }}</h2>
+                <span class="location">{{ dest.location }}</span>
+            </div>
+            <div class="card-body">
+                <p>{{ dest.description[:150] }}...</p>
+                <div class="tags">
+                    <span class="tag duration">{{ dest.duration }}</span>
+                    <span class="tag difficulty">{{ dest.difficulty }}</span>
+                    <span class="tag price">{{ dest.price_range }}</span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="/destination/{{ dest.slug }}">View details &rarr;</a>
+                <span class="contact">{{ dest.instagram }}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="/" class="back-link">&larr; Back to chat with Pana</a>
+</body>
+</html>

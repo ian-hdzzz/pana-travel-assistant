@@ -1,4 +1,5 @@
 import json
+import os
 import chromadb
 from chromadb.config import Settings
 from sentence_transformers import SentenceTransformer
@@ -8,6 +9,7 @@ from app.config import EMBEDDING_MODEL
 _client = None
 _collection = None
 _model = None
+_destinations = []
 
 
 def get_embedding_model():
@@ -28,12 +30,24 @@ def get_collection():
     return _collection
 
 
+def get_destinations():
+    return _destinations
+
+
+def get_destination_by_slug(slug: str) -> dict | None:
+    for dest in _destinations:
+        if dest.get("slug") == slug:
+            return dest
+    return None
+
+
 def load_knowledge_base(filepath: str = "knowledge_base/destinations.json"):
+    global _destinations
     collection = get_collection()
     model = get_embedding_model()
 
     with open(filepath, "r", encoding="utf-8") as f:
-        destinations = json.load(f)
+        _destinations = json.load(f)
 
     if collection.count() > 0:
         return
@@ -42,11 +56,22 @@ def load_knowledge_base(filepath: str = "knowledge_base/destinations.json"):
     metadatas = []
     ids = []
 
-    for i, dest in enumerate(destinations):
-        doc_text = f"{dest['name']} - {dest['location']}\n{dest['description']}\nContact: {dest['contact']}\nInstagram: {dest['instagram']}\nDuration: {dest['duration']}\nDifficulty: {dest['difficulty']}\nBest for: {dest['best_for']}"
+    for i, dest in enumerate(_destinations):
+        catalog_url = f"/destination/{dest.get('slug', '')}"
+        doc_text = (
+            f"{dest['name']} - {dest['location']}\n"
+            f"{dest['description']}\n"
+            f"Contact: {dest['contact']}\n"
+            f"Instagram: {dest['instagram']}\n"
+            f"Duration: {dest['duration']}\n"
+            f"Difficulty: {dest['difficulty']}\n"
+            f"Best for: {dest['best_for']}\n"
+            f"Catalog link: {catalog_url}"
+        )
         documents.append(doc_text)
         metadatas.append({
             "name": dest["name"],
+            "slug": dest.get("slug", ""),
             "location": dest["location"],
             "difficulty": dest["difficulty"],
             "duration": dest["duration"]

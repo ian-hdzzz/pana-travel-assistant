@@ -328,13 +328,30 @@
             }
         }
 
+        function linkify(text) {
+            return text.replace(
+                /(\[([^\]]+)\]\((https?:\/\/[^\s)]+)\))/g,
+                '<a href="$3" target="_blank" style="color: #f7d047; text-decoration: underline;">$2</a>'
+            ).replace(
+                /(?<!\])\((https?:\/\/[^\s)]+)\)/g,
+                '(<a href="$1" target="_blank" style="color: #f7d047; text-decoration: underline;">$1</a>)'
+            ).replace(
+                /(?<!")(https?:\/\/[^\s<)]+)/g,
+                '<a href="$1" target="_blank" style="color: #f7d047; text-decoration: underline;">$1</a>'
+            );
+        }
+
         function addMessage(text, type, meta = '') {
             const welcome = document.querySelector('.welcome');
             if (welcome) welcome.remove();
 
             const div = document.createElement('div');
             div.className = `message ${type}`;
-            div.textContent = text;
+            if (type === 'bot') {
+                div.innerHTML = linkify(text);
+            } else {
+                div.textContent = text;
+            }
 
             if (meta && type === 'bot') {
                 const metaDiv = document.createElement('div');

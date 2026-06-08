@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ dest.name }} — Pana Venezuela</title>
+    <meta property="og:title" content="{{ dest.name }} — Pana Venezuela">
+    <meta property="og:description" content="{{ dest.description[:160] }}">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0a1628;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d2b45 0%, #1a3a5a 50%, #0d1b2a 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1e3a5f;
+        }
+        .hero .flag { font-size: 36px; margin-bottom: 12px; }
+        .hero h1 { color: #ffffff; font-size: 28px; margin-bottom: 8px; }
+        .hero .location { color: #f7d047; font-size: 16px; font-weight: 500; }
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        .description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #b0c4de;
+            margin-bottom: 30px;
+        }
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 30px;
+        }
+        .detail-card {
+            background: #1a2a4a;
+            border: 1px solid #2a4a6a;
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .detail-card .label {
+            color: #7eb8da;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .detail-card .value {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .includes-section {
+            background: #1a2a4a;
+            border: 1px solid #2a4a6a;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .includes-section h3 {
+            color: #f7d047;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .includes-section p {
+            color: #b0c4de;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .contact-bar {
+            background: linear-gradient(135deg, #1a4a2a 0%, #0d2b1a 100%);
+            border: 1px solid #2a6a3a;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .contact-bar .cta {
+            color: #4ade80;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .contact-info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-info a {
+            color: #7eb8da;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .contact-info a:hover { color: #f7d047; }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .nav-links a {
+            color: #7eb8da;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .nav-links a:hover { color: #f7d047; }
+        @media (max-width: 600px) {
+            .details-grid { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="flag">🇻🇪</div>
+        <h1>{{ dest.name }}</h1>
+        <span class="location">{{ dest.location }}, Venezuela</span>
+    </div>
+
+    <div class="content">
+        <p class="description">{{ dest.description }}</p>
+
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="label">Duration</div>
+                <div class="value">{{ dest.duration }}</div>
+            </div>
+            <div class="detail-card">
+                <div class="label">Difficulty</div>
+                <div class="value">{{ dest.difficulty }}</div>
+            </div>
+            <div class="detail-card">
+                <div class="label">Best For</div>
+                <div class="value">{{ dest.best_for }}</div>
+            </div>
+            <div class="detail-card">
+                <div class="label">Best Season</div>
+                <div class="value">{{ dest.season }}</div>
+            </div>
+        </div>
+
+        <div class="includes-section">
+            <h3>What's Included</h3>
+            <p>{{ dest.includes }}</p>
+        </div>
+
+        <div class="detail-card" style="margin-bottom: 20px;">
+            <div class="label">Pricing</div>
+            <div class="value">{{ dest.price_range }}</div>
+        </div>
+
+        <div class="contact-bar">
+            <span class="cta">Ready to book?</span>
+            <div class="contact-info">
+                <a href="https://wa.me/58{{ dest.contact[1:] }}">WhatsApp: {{ dest.contact }}</a>
+                <a href="https://instagram.com/{{ dest.instagram[1:] }}">{{ dest.instagram }}</a>
+            </div>
+        </div>
+
+        <div class="nav-links">
+            <a href="/catalog">&larr; All experiences</a>
+            <a href="/">Chat with Pana</a>
+        </div>
+    </div>
+</body>
+</html>

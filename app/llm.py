@@ -39,7 +39,7 @@ DEMO_RESPONSES = {
 }
 
 
-def build_system_prompt(message: str, language: str, register: str, origin: str) -> tuple[str, bool]:
+def build_system_prompt(message: str, language: str, register: str, origin: str, base_url: str = "") -> tuple[str, bool]:
     is_emergency = check_emergency(message)
 
     if is_emergency:
@@ -53,6 +53,7 @@ def build_system_prompt(message: str, language: str, register: str, origin: str)
         register=register,
         origin=origin,
         rag_context=rag_context,
+        base_url=base_url,
     )
     return system_prompt, False
 
@@ -63,10 +64,11 @@ def generate_response(
     language: str,
     register: str,
     origin: str,
+    base_url: str = "",
 ) -> str:
     client = get_client()
 
-    system_prompt, is_emergency = build_system_prompt(message, language, register, origin)
+    system_prompt, is_emergency = build_system_prompt(message, language, register, origin, base_url)
 
     if client == "demo":
         if is_emergency:
@@ -82,7 +84,7 @@ def generate_response(
         model=MODEL_NAME,
         messages=messages,
         temperature=0.8,
-        max_tokens=800,
+        max_tokens=400,
     )
 
     return response.choices[0].message.content
