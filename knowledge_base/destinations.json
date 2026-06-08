@@ -68,5 +68,47 @@
     "includes": "Professional heritage guide, historical commentary, walking tour",
     "price_range": "Pay what you feel (tip-based)",
     "season": "Year-round, tours usually mornings"
+  },
+  {
+    "name": "El Calvario Heritage Walk — El Guia Tour",
+    "slug": "el-calvario-el-guia-tour",
+    "location": "Caracas",
+    "description": "A 3.5 to 4-hour heritage walk through El Calvario park — monuments, mirador with panoramic views of Caracas, Capilla Nuestra Senora de Lourdes, Arco Federacion. Professional guide, minimum 10 reservations required. A deep dive into Caracas history and architecture in one of the city's most iconic green spaces.",
+    "contact": "04241879097",
+    "instagram": "@elguiatour",
+    "duration": "3.5-4 hours",
+    "difficulty": "Easy",
+    "best_for": "History lovers, architecture enthusiasts, groups of 10+, culture seekers",
+    "includes": "Professional heritage guide, historical commentary, walking tour through El Calvario park",
+    "price_range": "Contact for pricing",
+    "season": "Year-round"
+  },
+  {
+    "name": "Bequeve — Los Roques All-Inclusive Posada",
+    "slug": "bequeve-los-roques",
+    "location": "Los Roques",
+    "description": "All-inclusive posada just 50 meters from the sea in Los Roques archipelago, designed by renowned architect Fruto Vivas. Breakfast, lunch, dinner, snorkel gear, and excursions to cayos included. One of Venezuela's most beautiful Caribbean destinations with crystal-clear turquoise water, white sand beaches, and incredible marine life.",
+    "contact": "04122972587",
+    "instagram": "@posadabequeve",
+    "duration": "Multi-day stay",
+    "difficulty": "Easy",
+    "best_for": "Beach lovers, couples, snorkelers, families, relaxation seekers",
+    "includes": "All meals (breakfast, lunch, dinner), snorkel gear, excursions to cayos, posada accommodation",
+    "price_range": "Contact for pricing (all-inclusive)",
+    "season": "Year-round, best weather December-April"
+  },
+  {
+    "name": "Bequeve — Choroni Colonial Lodge",
+    "slug": "bequeve-choroni",
+    "location": "Choroni, Puerto Colombia",
+    "description": "Colonial-style lodge in Puerto Colombia, Sector Dos Rios. Breakfast, merienda, dinner, and national drinks included. Minimum double occupancy. Located in the charming coastal town of Choroni, gateway to some of Venezuela's most beautiful Caribbean beaches surrounded by Henri Pittier National Park.",
+    "contact": "04122972587",
+    "instagram": "@posadabequeve",
+    "duration": "Multi-day stay",
+    "difficulty": "Easy",
+    "best_for": "Couples, culture lovers, beach and nature seekers, colonial architecture fans",
+    "includes": "Breakfast, merienda, dinner, national drinks, posada accommodation",
+    "price_range": "Contact for pricing (minimum double occupancy)",
+    "season": "Year-round, best weather December-April"
   }
 ]

@@ -6,7 +6,7 @@ _sessions: dict[str, dict] = {}
 
 def get_session(user_id: str) -> dict | None:
     session = _sessions.get(user_id)
-    if session and time.time() - session.get("last_active", 0) > 3600:
+    if session and time.time() - session.get("last_active", 0) > 7200:
         del _sessions[user_id]
         return None
     return session
