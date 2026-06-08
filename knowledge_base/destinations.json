@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Pico Bolívar con Uro Adventure",
+    "location": "Mérida",
+    "description": "The highest peak in Venezuela — a serious 2-day climb for couples and small groups with certified guides, full gear, camping at Domingo Peña's historic base, and teleférico access. Not for beginners, but unforgettable. Requires good physical condition and acclimatization. The route passes through páramo landscape with frailejones and stunning views of the Sierra Nevada.",
+    "contact": "04126002268",
+    "instagram": "@uro.adventure",
+    "duration": "2 days",
+    "difficulty": "Advanced",
+    "best_for": "Experienced hikers, couples seeking adventure, small groups",
+    "includes": "Certified mountain guides, camping gear, meals, teleférico ticket, safety equipment",
+    "price_range": "Contact for pricing",
+    "season": "Year-round, best December-March (dry season)"
+  },
+  {
+    "name": "Autana Tepuy con Cruz de Bolívar",
+    "location": "Amazonas",
+    "description": "8-day deep jungle expedition by river through the Orinoco, Sipapo and Autana — visiting indigenous communities, swimming in Lago Leopoldo, and summiting Cerro Wajari. One of Venezuela's most remote and epic experiences. You travel by curiara (traditional canoe) through pristine jungle, camp in indigenous communities, and witness one of the most sacred tepuyes up close.",
+    "contact": "04249323867",
+    "instagram": "@cruzdebolivar",
+    "duration": "8 days",
+    "difficulty": "Moderate-Advanced",
+    "best_for": "Adventure seekers, nature photographers, cultural travelers",
+    "includes": "River transport, indigenous community stays, all meals, guides, camping equipment, permits",
+    "price_range": "Contact for pricing",
+    "season": "Best during dry season (November-April)"
+  },
+  {
+    "name": "Roraima con Cruz de Bolívar",
+    "location": "Gran Sabana",
+    "description": "6-day trek to the summit of the ancient Roraima tepuy — the inspiration for Conan Doyle's 'Lost World.' All-inclusive expedition from Ciudad Bolívar with guides, cook, camping gear, and official permits included. The summit is a surreal landscape of rock formations, crystal pools, and endemic species found nowhere else on Earth. One of the most iconic treks in South America.",
+    "contact": "04249323867",
+    "instagram": "@cruzdebolivar",
+    "duration": "6 days",
+    "difficulty": "Moderate",
+    "best_for": "Trekkers, photographers, bucket-list travelers, groups",
+    "includes": "Transport from Ciudad Bolívar, certified guides, cook, all meals, camping gear, INPARQUES permits",
+    "price_range": "Contact for pricing",
+    "season": "Year-round, clearest views December-March"
+  },
+  {
+    "name": "Cascada 7 Pisos con Cruz de Bolívar",
+    "location": "Oriente Venezolano",
+    "description": "2-day road trip combining a 7-tier waterfall, Playa Colorada, Mochima, and the Casa Fuerte in Barcelona — with transport, meals, lodging at a posada with ocean views, and a local guide all included. Perfect mix of beach, nature, and history in Venezuela's eastern coast. Playa Colorada is one of the most beautiful beaches in the country with golden sand and turquoise water.",
+    "contact": "04249323867",
+    "instagram": "@cruzdebolivar",
+    "duration": "2 days",
+    "difficulty": "Easy",
+    "best_for": "Families, couples, first-time travelers to Venezuela, beach lovers",
+    "includes": "Transport, posada lodging, meals, local guide, beach access",
+    "price_range": "Contact for pricing",
+    "season": "Year-round, best weather December-April"
+  },
+  {
+    "name": "Free Tour Centro Histórico de Caracas — El Guía Tour",
+    "location": "Caracas",
+    "description": "A 3.5-hour walk through 19th-century afrancesado Caracas — Basílica Santa Teresa, Teatro Municipal, Plaza Bolívar, Panteón Nacional. Pay-what-you-feel format led by professional heritage guides. Learn about the city's architectural evolution, from colonial to neoclassical, and the stories behind Caracas' most iconic landmarks. Great introduction to the capital for newcomers.",
+    "contact": "04244149933",
+    "instagram": "@elguiatour",
+    "duration": "3.5 hours",
+    "difficulty": "Easy",
+    "best_for": "History lovers, first-time visitors to Caracas, culture enthusiasts, solo travelers",
+    "includes": "Professional heritage guide, historical commentary, walking tour",
+    "price_range": "Pay what you feel (tip-based)",
+    "season": "Year-round, tours usually mornings"
+  }
+]
