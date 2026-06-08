@@ -102,8 +102,12 @@ async def web_chat(payload: ChatMessage):
     }
 
 
+class ResetRequest(BaseModel):
+    phone_prefix: str = "+1"
+
+
 @app.post("/api/reset")
-async def reset_chat(payload: ChatMessage):
+async def reset_chat(payload: ResetRequest):
     from app.session import clear_session
     user_id = f"web_{payload.phone_prefix}"
     clear_session(user_id)
